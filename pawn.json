@@ -1,5 +1,9 @@
 {
-    "user": "Vince0789",
-    "repo": "pawn-array-util",
-    "contributors": ["Vince0789"]
+	"user": "Vince0789",
+	"repo": "pawn-array-util",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"dependencies": [
+		"sampctl/samp-stdlib"
+	]
 }

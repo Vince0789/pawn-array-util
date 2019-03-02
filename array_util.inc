@@ -96,5 +96,45 @@ stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack
     return false;
 }
 
+/**
+ * <summary>
+ *	Sorts array values in ascending order. Implementation of the QuickSort algorithm.
+ * </summary>
+ * <param name="arr">The array to sort.</param>
+ * <param name="left">Index of the lower bound, should normally be 0.</param>
+ * <param name="right">Index of the upper bound, should normally be the size of the array.</param>
+ */
+stock array_sort(array[], left = 0, right = sizeof array)
+{
+	new
+		i = left,
+		j = right;
+
+	new pivot = array[(left + right) / 2];
+
+	// partition
+	while (i <= j)
+	{
+		while (array[i] < pivot) { i++; }
+		while (array[j] > pivot) { j--; }
+
+		if (i <= j)
+		{
+			new temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		  	i++;
+		  	j--;
+		}
+	}
+
+	// recursion
+	if (left < j)
+		array_sort(array, left, j);
+
+	if (i < right)
+		array_sort(array, i, right);
+}
+
 // -----------------------------------------------------------------------------
 // EOF
