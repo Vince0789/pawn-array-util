@@ -37,7 +37,7 @@
  * </param>
  * <returns>The value at the first index.</returns>
  */
-stock array_shift(array[], value, size = sizeof array)
+stock ArrayShift(array[], value, size = sizeof array)
 {
 	new returnval = array[0];
 	
@@ -48,6 +48,12 @@ stock array_shift(array[], value, size = sizeof array)
 	
 	array[size - 1] = value;
 	return returnval;
+}
+
+#pragma deprecated 2.0.0
+stock array_shift(array[], value, size = sizeof array)
+{
+	return ArrayShift(array, value, size);
 }
 
 /**
@@ -63,7 +69,7 @@ stock array_shift(array[], value, size = sizeof array)
  * </param>
  * <returns>The value at size - 1.</return>
  */
-stock array_unshift(array[], value, size = sizeof array)
+stock ArrayUnshift(array[], value, size = sizeof array)
 {
 	new returnval = array[size - 1];
 	
@@ -76,6 +82,12 @@ stock array_unshift(array[], value, size = sizeof array)
 	return returnval;
 }
 
+#pragma deprecated 2.0.0
+stock array_unshift(array[], value, size = sizeof array)
+{
+	return ArrayUnshift(array, value, size);
+}
+
 /**
  * <summary>
  *  Checks if a value exists within an array.
@@ -86,7 +98,7 @@ stock array_unshift(array[], value, size = sizeof array)
  * <param name="size">Size of the array.</param>
  * <returns>true if found, false otherwise.</returns>
  */
-stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack)
+stock bool:InArray(needle, const haystack[], &index = 0, size = sizeof haystack)
 {	
 	while(index < size)
 	{
@@ -94,6 +106,12 @@ stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack
 			return true;
 	}
     return false;
+}
+
+#pragma deprecated 2.0.0
+stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack)
+{
+	return InArray(needle, haystack, index, size);
 }
 
 /**
@@ -104,7 +122,7 @@ stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack
  * <param name="left">Index of the lower bound, should normally be 0.</param>
  * <param name="right">Index of the upper bound, should normally be the size of the array.</param>
  */
-stock array_sort(array[], left = 0, right = sizeof array)
+stock ArraySort(array[], left = 0, right = sizeof array)
 {
 	new
 		i = left,
@@ -130,10 +148,16 @@ stock array_sort(array[], left = 0, right = sizeof array)
 
 	// recursion
 	if (left < j)
-		array_sort(array, left, j);
+		ArraySort(array, left, j);
 
 	if (i < right)
-		array_sort(array, i, right);
+		ArraySort(array, i, right);
+}
+
+#pragma deprecated 2.0.0
+stock array_sort(array[], left = 0, right = sizeof array)
+{
+	ArraySort(array, left, right);
 }
 
 // -----------------------------------------------------------------------------

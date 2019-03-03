@@ -41,35 +41,36 @@ Include in your code and begin using the library:
 ```
 
 ## Usage
+Version 1.2.0 changed the naming convention from `snake_case` to `PascalCase`. The snake case variant of the below functions can still be used, but the compiler will issue a warning. Snake case variants will be removed in 2.0.0.
 
-### array_shift
+### ArrayShift
 ```pawn
-stock array_shift(array[], value, size = sizeof array)
+stock ArrayShift(array[], value, size = sizeof array)
 ```
 Appends `value` to the end of `array`. Pushes the first value off and returns it, moves everything down.
 
-### array_unshift
+### ArrayUnshift
 ```pawn
-stock array_unshift(array[], value, size = sizeof array)
+stock ArrayUnshift(array[], value, size = sizeof array)
 ```
 Inserts `value` at the start of `array`. Pushes the last value off and returns it, moves everything up.
 
-### array_sort
+### ArraySort
 ```pawn
-stock array_sort(arr[], left = 0, right = sizeof arr)
+stock ArraySort(array[], left = 0, right = sizeof array)
 ```
 Sorts `array` in ascending order. Implementation of the QuickSort algorithm. This function does not return any value.
 
-### in_array
+### InArray
 ```pawn
-stock bool:in_array(needle, const haystack[], &index = 0, size = sizeof haystack)
+stock bool:InArray(needle, const haystack[], &index = 0, size = sizeof haystack)
 ```
 Returns `true` if `needle` is in `haystack`, false otherwise. Using the `index` parameter, this function can be used in a while loop to find all instances of a certain value:
 
 ```pawn
 new index = -1;
 
-while(in_array(5, theArrayToSearch, index))
+while(InArray(5, theArrayToSearch, index))
 {
     printf("found 5 at index: %d", index);
 }

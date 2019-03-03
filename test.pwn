@@ -3,82 +3,82 @@
 
 main()
 {
-    testShift();
-    testUnshift();
-    testInArray();
-    testSort();
+    TestShift();
+    TestUnshift();
+    TestInArray();
+    TestSort();
 }
 
-testShift()
+TestShift()
 {
-    printf("\narray_shift");
+    printf("\nArrayShift");
     printf("-----------");
 
     new arrayToShift[] = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 
     printf("before shifting:");
-    printArray(arrayToShift);
+    PrintArray(arrayToShift);
 
-    new firstValue = array_shift(arrayToShift, 89);
+    new firstValue = ArrayShift(arrayToShift, 89);
 
     printf("after shifting:");
-    printArray(arrayToShift);
+    PrintArray(arrayToShift);
     printf("value that was shifted off: %d", firstValue);
 }
 
-testUnshift()
+TestUnshift()
 {
-    printf("\narray_unshift");
+    printf("\nArrayUnshift");
     printf("-------------");
 
     new arrayToShift[] = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 
     printf("before shifting:");
-    printArray(arrayToShift);
+    PrintArray(arrayToShift);
 
-    new lastValue = array_unshift(arrayToShift, 89);
+    new lastValue = ArrayUnshift(arrayToShift, 89);
 
     printf("after shifting:");
-    printArray(arrayToShift);
+    PrintArray(arrayToShift);
     printf("value that was shifted off: %d", lastValue);
 }
 
-testInArray()
+TestInArray()
 {
-    printf("\nin_array");
+    printf("\nInArray");
     printf("--------");
 
     new testArray[] = {1, 3, 5, 7, 13, 5, 1, 7, 3};
 
     printf("array to search in:");
-    printArray(testArray);
+    PrintArray(testArray);
     printf("finding all the indexes that contain the number 5:");
 
     new index = -1;
 
-    while(in_array(5, testArray, index))
+    while(InArray(5, testArray, index))
     {
         printf("found 5 at index: %d", index);
     }
 }
 
-testSort()
+TestSort()
 {
-    printf("\narray_sort");
+    printf("\nArraySort");
     printf("----------");
 
     new arrayToSort[] = {13, 92, 85, 64, 17, 55, 33, 60, 58, 95};
 
     printf("before sort:");
-    printArray(arrayToSort);
+    PrintArray(arrayToSort);
 
-    array_sort(arrayToSort);
+    ArraySort(arrayToSort);
 
     printf("after sort:");
-    printArray(arrayToSort);
+    PrintArray(arrayToSort);
 }
 
-printArray(const arr[], size = sizeof arr)
+PrintArray(const arr[], size = sizeof arr)
 {
     new output[128];
 
