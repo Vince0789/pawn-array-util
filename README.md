@@ -63,7 +63,7 @@ Sorts `array` in ascending order. Implementation of the QuickSort algorithm. Thi
 
 ### InArray
 ```pawn
-stock bool:InArray(needle, const haystack[], &index = 0, size = sizeof haystack)
+stock bool:InArray(needle, const haystack[], &index = -1, size = sizeof haystack)
 ```
 Returns `true` if `needle` is in `haystack`, false otherwise. Using the `index` parameter, this function can be used in a while loop to find all instances of a certain value:
 
