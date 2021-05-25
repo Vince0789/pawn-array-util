@@ -3,7 +3,7 @@
 	"repo": "pawn-array-util",
 	"entry": "test.pwn",
 	"output": "test.amx",
-	"dependencies": [
+	"dev_dependencies": [
 		"sampctl/samp-stdlib"
 	]
 }

@@ -1,7 +1,7 @@
 /**
  * MIT License
  * 
- * Copyright (c) 2018 Vince0789
+ * Copyright (c) 2018-2021 Vince0789
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+#if defined _inc_array_util
+	#undef _inc_array_util
+#endif
+
+#if defined _INC_array_util
+	#endinput
+#endif
+#define _INC_array_util
 
 // -----------------------------------------------------------------------------
 
