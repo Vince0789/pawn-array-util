@@ -98,11 +98,11 @@ stock array_unshift(array[], value, size = sizeof array)
  * <param name="size">Size of the array.</param>
  * <returns>true if found, false otherwise.</returns>
  */
-stock bool:InArray(needle, const haystack[], &index = 0, size = sizeof haystack)
+stock bool:InArray(needle, const haystack[], &index = -1, size = sizeof haystack)
 {	
-	while(index < size)
+	while(++index < size)
 	{
-		if(haystack[index++] == needle)
+		if(haystack[index] == needle)
 			return true;
 	}
     return false;
