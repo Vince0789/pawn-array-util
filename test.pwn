@@ -7,6 +7,7 @@ main()
     TestUnshift();
     TestInArray();
     TestSort();
+    TestShuffle();
 }
 
 TestShift()
@@ -76,6 +77,22 @@ TestSort()
 
     printf("after sort:");
     PrintArray(arrayToSort);
+}
+
+TestShuffle()
+{
+    printf("\nArrayShuffle");
+    printf("------------");
+
+    new arrayToShuffle[] = {13, 92, 85, 64, 17, 55, 33, 60, 58, 95};
+
+    printf("before shuffle:");
+    PrintArray(arrayToShuffle);
+
+    ArrayShuffle(arrayToShuffle);
+
+    printf("after sort:");
+    PrintArray(arrayToShuffle);
 }
 
 PrintArray(const arr[], size = sizeof arr)

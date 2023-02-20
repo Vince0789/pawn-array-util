@@ -169,5 +169,26 @@ stock array_sort(array[], left = 0, right = sizeof array)
 	ArraySort(array, left, right);
 }
 
+/**
+ * <summary>
+ *   Shuffles an array, using the Fisher-Yates algorithm.
+ * </summary>
+ * <param name="array">The array to shuffle.</param>
+ * <param name="size">Size of the array.</param>
+ * <remarks>
+ *	Caution! Do not pass a string into this function. Doing so will corrupt it
+ *  because the NUL terminator is moved to a different position in the array.
+ * </remarks>
+ */
+stock ArrayShuffle(array[], size = sizeof array)
+{
+	for (new i = size - 1; i > 0; i--)
+	{
+		new j = random(i + 1);
+		new tmp = array[j];
+		array[j] = array[i];
+		array[i] = tmp;
+	}
+}
 // -----------------------------------------------------------------------------
 // EOF
